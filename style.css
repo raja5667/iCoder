@@ -1,0 +1,189 @@
+/* General Body Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Navbar Styling */
+.navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #007bff !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #ffffff;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #ffc107; /* Hover effect for links */
+}
+
+/* Carousel Images */
+.carousel-item img {
+    height: 600px; /* Fix the height */
+    object-fit: cover; /* Ensure proper scaling without distortion */
+    margin: 0 auto; /* Center the image */
+}
+
+/* Carousel Captions */
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 2.5rem;
+    color: #007bff; /* Bright blue color */
+    text-align: center;
+    margin-top: 50px;
+    font-weight: bold;
+}
+
+/* Card Styling */
+.card {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: transform 0.3s ease; /* Smooth hover transition */
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Floating effect on hover */
+}
+
+/* Testimonial Section */
+.testimonial {
+    background: #f8f9fa; /* Light gray background */
+    padding: 50px 0; /* Vertical padding */
+}
+
+.testimonial .card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for cards */
+}
+
+/* Newsletter Section */
+.newsletter {
+    background: linear-gradient(45deg, #007bff, #6610f2); /* Gradient background */
+    color: #ffffff; /* White text */
+    padding: 30px; /* Padding inside the section */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.newsletter h5 {
+    color: #f8f9fa; /* Slightly lighter text color for titles */
+}
+
+/* Footer Styling */
+footer {
+    background-color: #343a40; /* Dark background */
+    color: #ffffff; /* White text */
+    padding: 20px 0; /* Spacing */
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow on footer */
+}
+
+footer a {
+    color: #ffc107; /* Gold links */
+    text-decoration: none; /* Remove underline */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Add underline on hover */
+    color: #f8f9fa; /* Light hover effect */
+}
+
+/* Social Icons */
+.social-icons img {
+    width: 30px;
+    margin-right: 15px;
+}
+
+/* Custom Button */
+.btn-custom {
+    background-color: #28a745;
+    color: #fff;
+    border-radius: 25px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-custom:hover {
+    background-color: #218838;
+}
+
+  /* Toggle Switch Styling */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 25px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 19px;
+    width: 19px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #4caf50;
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+/* Dark Mode Styling */
+.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+.dark-mode .navbar {
+    background-color: #333;
+}
+
+.dark-mode .card {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.dark-mode footer {
+    background-color: #333;
+}
+
+.dark-mode a {
+    color: #90caf9;
+}
+
+.dark-mode .btn {
+    color: white;
+}
