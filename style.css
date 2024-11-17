@@ -1,12 +1,10 @@
-/* General Body Styling */
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f8f9fa;
 }
 
-/* Navbar Styling */
 .navbar {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-brand {
@@ -19,90 +17,81 @@ body {
 }
 
 .navbar-dark .navbar-nav .nav-link:hover {
-    color: #ffc107; /* Hover effect for links */
+    color: #ffc107;
 }
 
-/* Carousel Images */
 .carousel-item img {
-    height: 600px; /* Fix the height */
-    object-fit: cover; /* Ensure proper scaling without distortion */
-    margin: 0 auto; /* Center the image */
+    height: 600px;
+    object-fit: cover;
+    margin: 0 auto;
 }
 
-/* Carousel Captions */
 .carousel-caption {
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    background: rgba(0, 0, 0, 0.5);
     padding: 20px;
-    border-radius: 10px; /* Rounded corners */
+    border-radius: 10px;
 }
 
-/* Section Titles */
 .section-title {
     font-size: 2.5rem;
-    color: #007bff; /* Bright blue color */
+    color: #007bff;
     text-align: center;
     margin-top: 50px;
     font-weight: bold;
 }
 
-/* Card Styling */
 .card {
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    transition: transform 0.3s ease; /* Smooth hover transition */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-10px); /* Floating effect on hover */
+    transform: translateY(-10px);
 }
 
-/* Testimonial Section */
 .testimonial {
-    background: #f8f9fa; /* Light gray background */
-    padding: 50px 0; /* Vertical padding */
+    background: #f8f9fa;
+    padding: 50px 0;
 }
 
 .testimonial .card {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for cards */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Newsletter Section */
 .newsletter {
-    background: linear-gradient(45deg, #007bff, #6610f2); /* Gradient background */
-    color: #ffffff; /* White text */
-    padding: 30px; /* Padding inside the section */
-    border-radius: 10px; /* Rounded corners */
+    background: linear-gradient(45deg, #007bff, #6610f2);
+    color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
 }
 
 .newsletter h5 {
-    color: #f8f9fa; /* Slightly lighter text color for titles */
+    color: #f8f9fa;
 }
 
-/* Footer Styling */
 footer {
-    background-color: #343a40; /* Dark background */
-    color: #ffffff; /* White text */
-    padding: 20px 0; /* Spacing */
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow on footer */
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 20px 0;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
 }
 
 footer a {
-    color: #ffc107; /* Gold links */
-    text-decoration: none; /* Remove underline */
+    color: #ffc107;
+    text-decoration: none;
 }
 
 footer a:hover {
-    text-decoration: underline; /* Add underline on hover */
-    color: #f8f9fa; /* Light hover effect */
+    text-decoration: underline;
+    color: #f8f9fa;
 }
 
-/* Social Icons */
 .social-icons img {
     width: 30px;
     margin-right: 15px;
 }
 
-/* Custom Button */
 .btn-custom {
     background-color: #28a745;
     color: #fff;
@@ -115,8 +104,7 @@ footer a:hover {
     background-color: #218838;
 }
 
-  /* Toggle Switch Styling */
-  .switch {
+.switch {
     position: relative;
     display: inline-block;
     width: 50px;
@@ -153,15 +141,14 @@ footer a:hover {
     border-radius: 50%;
 }
 
-input:checked + .slider {
+input:checked+.slider {
     background-color: #4caf50;
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
     transform: translateX(24px);
 }
 
-/* Dark Mode Styling */
 .dark-mode {
     background-color: #121212;
     color: white;
