@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Login Page</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    body {
+    background-color: #f8f9fa;
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 80px 30px;
+    width: 100%;
+    max-width: 450px;
+}
+
+.card h3 {
+    text-align: center;
+    color: #2575fc;
+    margin-bottom: 20px;
+}
+
+.form-control {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-control:focus {
+    border-color: #2575fc;
+    box-shadow: none;
+}
+
+.btn-primary {
+    background: #2575fc;
+    border: none;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.btn-primary:hover {
+    background: #6a11cb;
+}
+
+.text-center a {
+    color: #2575fc;
+}
+
+.text-center a:hover {
+    text-decoration: underline;
+}
+</style>
+
+<body>
+    <div class="container d-flex justify-content-center ">
+        <div class="card">
+            <h3>Log In</h3>
+            <!-- Form Action Points to Backend Script -->
+            <form action="process_login.php" method="POST" id="loginForm">
+                <!-- Email Input -->
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email"
+                        required>
+                </div>
+                <!-- Password Input -->
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password"
+                        placeholder="Enter your password" required>
+                </div>
+                <!-- Remember Me -->
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="rememberMe" name="rememberMe">
+                    <label class="form-check-label" for="rememberMe">Remember Me</label>
+                </div>
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary w-100 mt-3">Log In</button>
+            </form>
+            <p class="text-center mt-3">Don't have an account? <a href="sing up.html">Sign Up</a></p>
+        </div>
+    </div>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

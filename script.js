@@ -30,3 +30,22 @@ if (toggleButton) {
         }
     });
 }
+
+document.querySelector('form').addEventListener('submit', function (e) {
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+    if (password !== confirmPassword) {
+        e.preventDefault();
+        alert("Passwords do not match. Please try again.");
+    }
+});
+
+document.getElementById("loginForm").addEventListener("submit", function (event) {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    if (!email || !password) {
+        event.preventDefault();
+        alert("Please fill out all fields.");
+    }
+});
