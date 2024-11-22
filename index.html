@@ -86,7 +86,7 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="mohammad-rahmani-oXlXu2qukGE-unsplash.jpg" class="d-block w-100" alt="Community">
-                <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-caption d-md-block">
                     <h2>Join Our Community</h2>
                     <p>Stay Updated with the Latest Trends</p>
                     <a href="sing up.html" class="btn btn-danger">Get Started</a>
@@ -94,7 +94,7 @@
             </div>
             <div class="carousel-item">
                 <img src="mohammad-rahmani-LrxSl4ZxoRs-unsplash.jpg" class="d-block w-100" alt="Creative Workspace">
-                <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-caption d-md-block">
                     <h2>Build Your Skills</h2>
                     <p>Empowering Creativity and Innovation</p>
                     <a href="#" class="btn btn-success">Explore</a>
@@ -102,7 +102,7 @@
             </div>
             <div class="carousel-item">
                 <img src="irvan-smith-cwqG1N1AtI0-unsplash.jpg" class="d-block w-100" alt="Technology Scene">
-                <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-caption d-md-block">
                     <h2>Welcome to iCoder</h2>
                     <p>Discover Technology, Development, and Trends</p>
                     <a href="#" class="btn btn-primary">Learn More</a>
@@ -263,7 +263,7 @@
                 <div class="form-group col-md-6">
                     <label for="email">Email</label>
                     <input type="email" class="form-control" id="email" placeholder="Your Email" required>
-                    <div class="invalid-feedback">Please provide a valid email.</div>  <!-- Error message -->
+                    <div class="invalid-feedback">Please provide a valid email.</div> <!-- Error message -->
                 </div>
             </div>
             <div class="form-group">
@@ -271,7 +271,7 @@
                 <textarea class="form-control" id="message" rows="4" placeholder="Your Message" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Send Message</button>
-        </form>        
+        </form>
     </div>
 
     <!-- Footer Section -->
@@ -287,6 +287,50 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <script src="script.js"></script> <!-- Include script.js for any additional JS -->
+
+    <script>
+        // Check for the flag in localStorage
+        const showWelcomeMessage = localStorage.getItem("showWelcomeMessage");
+        const firstName = localStorage.getItem("main_firstname"); // Retrieve the first name stored during sign-up
+
+        if (showWelcomeMessage === "true") {
+            // Create the alert box dynamically
+            const alertBox = document.createElement("div");
+
+            // Display personalized welcome message if the first name exists
+            if (firstName) {
+                alertBox.textContent = `Hi ${firstName}! Welcome to iCoder!`;
+            } else {
+                alertBox.textContent = "Hi! Welcome to iCoder!";
+            }
+
+            // Style the alert box
+            alertBox.style.position = "fixed";
+            alertBox.style.top = "10px";
+            alertBox.style.left = "50%";
+            alertBox.style.transform = "translateX(-50%)";
+            alertBox.style.backgroundColor = "#f8d7da";
+            alertBox.style.color = "#721c24";
+            alertBox.style.padding = "15px 20px";
+            alertBox.style.border = "1px solid #f5c6cb";
+            alertBox.style.borderRadius = "5px";
+            alertBox.style.fontSize = "16px";
+            alertBox.style.fontWeight = "bold";
+            alertBox.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.2)";
+            alertBox.style.zIndex = "1000";
+
+            // Append the alert box to the document body
+            document.body.appendChild(alertBox);
+
+            // Remove the alert box after 5 seconds
+            setTimeout(() => {
+                alertBox.remove();
+            }, 5000);
+
+            // Clear the flag from localStorage to prevent showing the message again
+            localStorage.removeItem("showWelcomeMessage");
+        }
+    </script>
 
 </body>
 

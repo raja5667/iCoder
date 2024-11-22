@@ -34,35 +34,60 @@ if (toggleButton) {
     });
 }
 
-// Sign-Up Process: Password Confirmation and Storing Credentials
 document.querySelector('form').addEventListener('submit', function (e) {
     e.preventDefault(); // Prevent form submission to allow custom handling
 
-    const singup_email = document.getElementById('email').value.trim();
-    const singup_password = document.getElementById('password').value;
-    const singup_confirmPassword = document.getElementById('confirmPassword').value;
+    const signup_firstname = document.getElementById('firstname').value.trim();
+    const signup_lastname = document.getElementById('lastname').value.trim();
+    const signup_email = document.getElementById('email').value.trim();
+    const signup_password = document.getElementById('password').value;
+    const signup_confirmPassword = document.getElementById('confirmPassword').value;
 
-    // Password confirmation check
-    if (singup_password !== singup_confirmPassword) {
-        alert("Passwords do not match. Please try again.");
-        return; // Stop execution if passwords don't match
+    // Validate First Name and Last Name
+    if (signup_firstname === "" || signup_lastname === "") {
+        alert("Please fill in both your first and last name.");
+        return;
     }
 
-    // Store the email and password in localStorage after successful sign-up
-    localStorage.setItem('main_email', singup_email);
-    localStorage.setItem('main_pass', singup_password);
+    // Validate Email Format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(signup_email)) {
+        alert("Please enter a valid email address.");
+        return;
+    }
 
-    console.log("User signed up with email:", singup_email);
-    console.log("User signed up with password:", singup_password);
+    // Password confirmation check
+    if (signup_password !== signup_confirmPassword) {
+        alert("Passwords do not match. Please try again.");
+        return;
+    }
 
-    // Debugging log before redirection
-    console.log("Redirecting to index.html...");
+    // Minimum password strength check
+    if (signup_password.length < 8) {
+        alert("Password must be at least 8 characters long.");
+        return;
+    }
+
+    // Store the data in localStorage
+    localStorage.setItem('main_firstname', signup_firstname);
+    localStorage.setItem('main_lastname', signup_lastname);
+    localStorage.setItem('main_email', signup_email);
+    localStorage.setItem('main_pass', btoa(signup_password)); // Encode password for basic security
+
+    console.log("User signed up with:");
+    console.log("First Name:", signup_firstname);
+    console.log("Last Name:", signup_lastname);
+    console.log("Email:", signup_email);
+    console.log("Password (encoded):", btoa(signup_password));
+
+    // Inform the user of successful sign-up
+    alert("Sign-up successful!");
 
     // Redirect to index.html
-    window.location.href = "index.html"; // Make sure the file path is correct
+    window.location.href = "index.html";
 });
 
-// Login Process: Email and Password Validation using localStorage
+
 document.getElementById("loginForm").addEventListener("submit", function (event) {
     event.preventDefault(); // Prevent default form submission
 
@@ -70,8 +95,9 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
     const login_password = document.getElementById("password").value;
 
     // Retrieve stored values from localStorage
-    const main_email = localStorage.getItem('main_email');
-    const main_pass = localStorage.getItem('main_pass');
+    const main_email = localStorage.getItem("main_email");
+    const main_pass = localStorage.getItem("main_pass");
+    const firstName = localStorage.getItem("main_firstname"); // Corrected key
 
     // Log the entered values
     console.log("Email entered:", login_email);
@@ -82,10 +108,16 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
         alert("Please fill out all fields.");
     } else if (login_email !== main_email) {
         alert("Email does not match. Please try again.");
-    } else if (login_password !== main_pass) {
+    } else if (btoa(login_password) !== main_pass) {
         alert("Password does not match. Please try again.");
     } else {
-        console.log("Redirecting to index.html...");
-        window.location.href = "index.html"; // Redirect on successful login
+        console.log("Login successful. Setting flag for welcome message.");
+
+        // Set a flag to show the welcome message on index.html
+        localStorage.setItem("showWelcomeMessage", "true");
+
+        // Redirect to index.html
+        window.location.href = "index.html";
     }
 });
+

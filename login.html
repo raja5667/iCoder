@@ -15,58 +15,99 @@
 </head>
 <style>
     body {
-    background-color: #f8f9fa;
-    font-family: 'Arial', sans-serif;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-}
+        background-color: #f8f9fa;
+        font-family: 'Arial', sans-serif;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+    }
 
-.card {
-    background: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    padding: 80px 30px;
-    width: 100%;
-    max-width: 450px;
-}
+    .card {
+        background: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        padding: 80px 30px;
+        width: 100%;
+        max-width: 450px;
+    }
 
-.card h3 {
-    text-align: center;
-    color: #2575fc;
-    margin-bottom: 20px;
-}
+    .card h3 {
+        text-align: center;
+        color: #2575fc;
+        margin-bottom: 20px;
+    }
 
-.form-control {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
+    .form-control {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
 
-.form-control:focus {
-    border-color: #2575fc;
-    box-shadow: none;
-}
+    .form-control:focus {
+        border-color: #2575fc;
+        box-shadow: none;
+    }
 
-.btn-primary {
-    background: #2575fc;
-    border: none;
-    transition: 0.3s;
-    border-radius: 5px;
-}
+    .btn-primary {
+        background: #2575fc;
+        border: none;
+        transition: 0.3s;
+        border-radius: 5px;
+    }
 
-.btn-primary:hover {
-    background: #6a11cb;
-}
+    .btn-primary:hover {
+        background: #6a11cb;
+    }
 
-.text-center a {
-    color: #2575fc;
-}
+    .text-center a {
+        color: #2575fc;
+    }
 
-.text-center a:hover {
-    text-decoration: underline;
-}
+    .text-center a:hover {
+        text-decoration: underline;
+    }
+
+    /* Style for the alert box */
+    #alert-box {
+        position: fixed;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #f8d7da;
+        /* Light red for error alert */
+        color: #721c24;
+        /* Dark red text */
+        padding: 15px 20px;
+        border: 1px solid #f5c6cb;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        display: none;
+        /* Hidden by default */
+        z-index: 1000;
+        animation: fadeInOut 8s ease forwards;
+    }
+
+    /* Optional animation for fading */
+    @keyframes fadeInOut {
+        0% {
+            opacity: 0;
+        }
+
+        10% {
+            opacity: 1;
+        }
+
+        90% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
 </style>
 
 <body>
@@ -96,6 +137,8 @@
                 <button type="submit" id="log_in" class="btn btn-primary w-100 mt-3">Log In</button>
             </form>
             <p class="text-center mt-3">Don't have an account? <a href="sing up.html">Sign Up</a></p>
+            <!-- Alert Box -->
+            <div id="alert-box">Hi! Welcome to iCoder!</div>
         </div>
     </div>
     <!-- jQuery -->
