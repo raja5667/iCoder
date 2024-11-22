@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Title</title>
+    <title>About Us - iCoder</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,6 +12,26 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
+<style>
+    .container {
+        margin-top: 5rem;
+    }
+
+    .row {
+        margin-bottom: 30px;
+    }
+
+    .img-fluid {
+        /* Adding shadow to images */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    .img-fluid:hover {
+        /* Slightly larger shadow on hover */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5), 0 12px 40px rgba(0, 0, 0, 0.15);
+    }
+</style>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -61,12 +81,99 @@
                         <input type="checkbox" id="mode-toggle">
                         <span class="slider"></span>
                     </label>
-                    <i class="fas fa-moon ml-2" id="mode-icon"></i>
+                    <i class="fas ml-2" id="mode-icon">
+                        <img class="icon" src="sun.svg" alt="Toggle Icon">
+                    </i>
                 </div>
             </div>
         </div>
     </nav>
 
+    <div class="container">
+        <!-- First Row -->
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading fw-normal lh-1">Welcome to iCoder! <span class="text-body-secondary">We
+                        make coding fun and accessible.</span></h2>
+                <p class="lead">At iCoder, we believe in empowering individuals with the skills needed to thrive in
+                    today's digital world. Whether you're a beginner or an experienced coder, we provide resources and
+                    guidance to help you grow and succeed in the exciting world of programming. Join us on this learning
+                    journey and unlock your potential! Our platform is designed to make coding fun, engaging, and
+                    accessible
+                    for everyone. From interactive courses to mentorship, iCoder is your partner in learning the art of
+                    coding.</p>
+            </div>
+            <div class="col-md-5">
+                <img src="DALL·E 2024-11-22 14.25.26 - A vibrant image symbolizing the theme of learning to code. The image should feature a person working on a laptop in a modern, creative workspace, with.webp"
+                    alt="iCoder Image" class="img-fluid mx-auto">
+            </div>
+        </div>
+
+        <!-- Second Row -->
+        <div class="row featurette">
+            <div class="col-md-7 order-md-1">
+                <h2 class="featurette-heading fw-normal lh-1">Our Mission <span class="text-body-secondary">Transforming
+                        coding education for everyone.</span></h2>
+                <p class="lead">Our mission is to provide a platform where anyone, from any background, can learn to
+                    code and become a part of the ever-growing tech community. We want to break the barriers of
+                    traditional learning and make coding accessible to all! We aim to make programming languages and
+                    coding
+                    concepts easy to understand for all learners, whether you're coding for the first time or looking to
+                    sharpen your skills. Our mission is to cultivate curiosity, foster innovation, and build a
+                    supportive
+                    learning environment for all.</p>
+            </div>
+            <div class="col-md-5">
+                <img src="DALL·E 2024-11-22 14.29.04 - A symbolic representation of a mission, showcasing an abstract concept of a determined path or journey. The image should have elements of a road or a .webp"
+                    alt="Mission Image" class="img-fluid mx-auto">
+            </div>
+        </div>
+
+        <!-- Third Row -->
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading fw-normal lh-1">What We Offer <span class="text-body-secondary">Courses,
+                        mentorship, and resources.</span></h2>
+                <p class="lead">We offer a wide range of coding courses tailored for beginners and advanced learners. In
+                    addition to courses, we provide mentorship to guide you on your learning path, as well as free
+                    resources to help you along the way! Whether you're interested in web development, mobile app
+                    development, data science, or any other aspect of coding, we have a course for you. Our expert
+                    mentors
+                    are always ready to help you succeed by offering personalized guidance and feedback. Moreover, we
+                    provide
+                    resources such as coding challenges, project ideas, and reference materials to ensure you can keep
+                    progressing and learning!</p>
+            </div>
+            <div class="col-md-5">
+                <img src="freepik__500x500__57251.jpg" alt="Offer Image" class="img-fluid mx-auto"
+                    style="width: 500px; height: 500px;">
+            </div>
+        </div>
+
+        <!-- Fourth Row -->
+        <div class="row featurette flex-row-reverse">
+            <div class="col-md-7">
+                <h2 class="featurette-heading fw-normal lh-1">Join the iCoder Community <span
+                        class="text-body-secondary">Let's code together!</span></h2>
+                <p class="lead">Be a part of a community of passionate learners and expert mentors. At iCoder, we
+                    believe in collaborative learning, and our community provides the perfect space for coding
+                    enthusiasts to share knowledge and grow together. Whether you're looking for help with a tricky
+                    coding
+                    problem or you want to help others by sharing your knowledge, our community is a place to connect,
+                    collaborate, and improve together. Our forums, live chat, and collaborative projects make learning
+                    to code
+                    a fun and engaging experience!</p>
+            </div>
+            <div class="col-md-5">
+                <img src="DALL·E 2024-11-22 14.27.27 - A vibrant and engaging image symbolizing community and collaboration, featuring diverse people working together in a dynamic and inclusive environment.webp"
+                    alt="Community Image" class="img-fluid mx-auto">
+            </div>
+        </div>
+    </div>
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <p>&copy; 2024 iCoder. All Rights Reserved.</p>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

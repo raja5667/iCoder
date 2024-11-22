@@ -6,6 +6,11 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description"
+        content="iCoder - Your go-to solution for web development, SEO optimization, and digital marketing services.">
+    <meta name="keywords" content="web development, SEO, digital marketing, technology, innovation">
+    <meta name="author" content="iCoder Team">
+
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -63,7 +68,9 @@
                         <input type="checkbox" id="mode-toggle">
                         <span class="slider"></span>
                     </label>
-                    <i class="fas fa-moon ml-2" id="mode-icon"></i>
+                    <i class="fas ml-2" id="mode-icon">
+                        <img class="icon" src="sun.svg" alt="Toggle Icon">
+                    </i>
                 </div>
             </div>
         </div>
@@ -118,7 +125,7 @@
             <div class="col-md-4">
                 <div class="card">
                     <img src="DALL·E 2024-11-17 13.13.34 - A modern workspace with a laptop showing code and web design elements. The background features an office setup with a computer screen displaying lines.webp"
-                        class="card-img-top" alt="Web Development">
+                        class="card-img-top" alt="Web Development" loading="lazy">
                     <div class="card-body">
                         <h5 class="card-title">Web Development</h5>
                         <p class="card-text">Build stunning websites with our expert team.</p>
@@ -129,7 +136,8 @@
             <div class="col-md-4">
                 <div class="card">
                     <img src="DALL·E 2024-11-17 13.15.37 - An infographic explaining SEO optimization for images, featuring points like file name, alt text, image size, responsive images, image format, caption.webp"
-                        class="card-img-top" alt="SEO Optimization">
+                        class="card-img-top" alt="SEO Optimization" loading="lazy">
+
                     <div class="card-body">
                         <h5 class="card-title">SEO Optimization</h5>
                         <p class="card-text">Rank higher with our top-notch SEO services.</p>
@@ -140,7 +148,7 @@
             <div class="col-md-4">
                 <div class="card">
                     <img src="DALL·E 2024-11-17 13.17.29 - A digital marketing concept featuring a vibrant and modern workspace. A computer screen shows various digital marketing tools like social media icons,.webp"
-                        class="card-img-top" alt="Digital Marketing">
+                        class="card-img-top" alt="Digital Marketing" loading="lazy">
                     <div class="card-body">
                         <h5 class="card-title">Digital Marketing</h5>
                         <p class="card-text">Reach your audience with effective strategies.</p>
@@ -255,6 +263,7 @@
                 <div class="form-group col-md-6">
                     <label for="email">Email</label>
                     <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                    <div class="invalid-feedback">Please provide a valid email.</div>  <!-- Error message -->
                 </div>
             </div>
             <div class="form-group">
@@ -262,7 +271,7 @@
                 <textarea class="form-control" id="message" rows="4" placeholder="Your Message" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Send Message</button>
-        </form>
+        </form>        
     </div>
 
     <!-- Footer Section -->

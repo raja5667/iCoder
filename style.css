@@ -142,7 +142,8 @@ footer a:hover {
 }
 
 input:checked+.slider {
-    background-color: #4caf50;
+    background-color: #6469ff;
+    ;
 }
 
 input:checked+.slider:before {
@@ -173,4 +174,8 @@ input:checked+.slider:before {
 
 .dark-mode .btn {
     color: white;
+}
+
+.icon {
+    margin-bottom: .5rem;
 }

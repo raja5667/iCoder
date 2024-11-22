@@ -20,17 +20,17 @@ var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
 // Dark Mode Toggle
 const toggleButton = document.getElementById("mode-toggle");
 if (toggleButton) {
-    toggleButton.addEventListener("click", function () {
-        document.body.classList.toggle("dark-mode");
-        const icon = toggleButton.querySelector("i");
+    toggleButton.addEventListener("change", function () {
+        setTimeout(() => {
+            document.body.classList.toggle("dark-mode");
+            const icon = document.querySelector("#mode-icon img");
 
-        if (document.body.classList.contains("dark-mode")) {
-            icon.classList.remove("fa-moon");
-            icon.classList.add("fa-sun");
-        } else {
-            icon.classList.remove("fa-sun");
-            icon.classList.add("fa-moon");
-        }
+            if (document.body.classList.contains("dark-mode")) {
+                icon.src = "moon.svg"; // Set to dark mode icon
+            } else {
+                icon.src = "sun.svg"; // Set to light mode icon
+            }
+        }, 500); // 500ms delay
     });
 }
 
