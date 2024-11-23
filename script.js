@@ -18,9 +18,9 @@ var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
 })();
 
 // Dark Mode Toggle
-const toggleButton = document.getElementById("mode-toggle");
+const toggleButton = document.getElementById("mode-icon");
 if (toggleButton) {
-    toggleButton.addEventListener("change", function () {
+    toggleButton.addEventListener("click", function () {
         setTimeout(() => {
             document.body.classList.toggle("dark-mode");
             const icon = document.querySelector("#mode-icon img");
@@ -120,4 +120,3 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
         window.location.href = "index.html";
     }
 });
-

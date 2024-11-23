@@ -61,17 +61,20 @@
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
-                <!-- Dark/Light Mode Toggle Button -->
-                <div class="ml-3 d-flex align-items-center">
-                    <label class="switch">
-                        <input type="checkbox" id="mode-toggle">
-                        <span class="slider"></span>
-                    </label>
-                    <i class="fas ml-2" id="mode-icon">
+                    <!-- Dark/Light Mode Toggle Button -->
+                    <i class="fas ml-2" id="mode-icon" style="cursor: pointer;">
                         <img class="icon" src="sun.svg" alt="Toggle Icon">
                     </i>
-                </div>
+                </form>
+                <div class="dropdown account ml-3" style="cursor: pointer;">
+                    <img class="profile-img dropdown-toggle" src="kd.jpg" alt="Profile" id="profileDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="dropdown-menu dropdown-menu-right custom-dropdown" aria-labelledby="profileDropdown">
+                        <a class="dropdown-item" href="/profile.html">My Profile</a>
+                        <a class="dropdown-item" href="/settings.html">Settings</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item text-danger" href="/logout.html">Logout</a>
+                    </div>
+                </div>                
             </div>
         </div>
     </nav>

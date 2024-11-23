@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .profile-header {
+            background: linear-gradient(135deg, #007bff, #6610f2);
+            color: white;
+            padding: 40px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-header img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid white;
+        }
+
+        .profile-header h2 {
+            margin-top: 15px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .profile-header p {
+            font-size: 16px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .card {
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .btn-edit {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .btn-edit:hover {
+            background-color: #0056b3;
+        }
+
+        .info-item {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .info-label {
+            font-weight: bold;
+        }
+
+        .info-value {
+            margin-left: 10px;
+            color: #555;
+        }
+
+        .activity-card {
+            margin-top: 20px;
+        }
+
+        .activity-card h5 {
+            font-weight: bold;
+        }
+
+        .activity-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .activity-card ul li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Profile Header -->
+    <div class="profile-header text-center">
+        <img src="profile-pic.jpg" alt="Profile Picture">
+        <h2>Dhrubajyoti Das</h2>
+        <p>Web Developer & Digital Marketer</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Personal Info Section -->
+            <div class="col-md-6">
+                <h2 class="section-title">Personal Information</h2>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="info-item">
+                            <span class="info-label">Name:</span>
+                            <span class="info-value">Dhrubajyoti Das</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Email:</span>
+                            <span class="info-value">dhrubajyoti@example.com</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Phone:</span>
+                            <span class="info-value">+91 6289177529</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Location:</span>
+                            <span class="info-value">North India</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Date of Birth:</span>
+                            <span class="info-value">March 10, 2003</span>
+                        </div>
+                        <button class="btn btn-edit btn-block mt-3">Edit Information</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Activity Summary Section -->
+            <div class="col-md-6">
+                <h2 class="section-title">Activity Summary</h2>
+                <div class="card activity-card">
+                    <div class="card-body">
+                        <h5>Recent Activities</h5>
+                        <ul>
+                            <li>Updated profile picture on Nov 20, 2024.</li>
+                            <li>Completed a web development project on Nov 15, 2024.</li>
+                            <li>Achieved 5-star rating for a design service on Nov 10, 2024.</li>
+                        </ul>
+                        <h5>Skills</h5>
+                        <ul>
+                            <li>Web Design & Development</li>
+                            <li>SEO Optimization</li>
+                            <li>Digital Marketing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Editable Section -->
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <h2 class="section-title">Update Your Details</h2>
+                <div class="card">
+                    <div class="card-body">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="name">Name</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="phone">Phone</label>
+                                    <input type="text" class="form-control" id="phone" placeholder="Your Phone">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="dob">Date of Birth</label>
+                                    <input type="date" class="form-control" id="dob">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-edit btn-block">Save Changes</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-4 mt-5">
+        <p>&copy; 2024 Dhrubajyoti Das. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
