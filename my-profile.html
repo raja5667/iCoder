@@ -225,11 +225,11 @@
             <form id="edit-form" onsubmit="updateProfile(event)">
                 <div class="form-group">
                     <label for="edit-firstname">First Name:</label>
-                    <input type="text" id="edit-firstname" class="form-control" required>
+                    <input type="text" id="edit-firstname" class="form-control" disabled>
                 </div>
                 <div class="form-group">
                     <label for="edit-lastname">Last Name:</label>
-                    <input type="text" id="edit-lastname" class="form-control" required>
+                    <input type="text" id="edit-lastname" class="form-control" disabled>
                 </div>
                 <div class="form-group">
                     <label for="edit-role">Role:</label>
@@ -241,7 +241,7 @@
                 </div>
                 <div class="form-group">
                     <label for="edit-email">Email:</label>
-                    <input type="email" id="edit-email" class="form-control" required>
+                    <input type="email" id="edit-email" class="form-control" readonly>
                 </div>
                 <div class="form-group">
                     <label for="edit-phone">Phone:</label>
@@ -251,15 +251,17 @@
                     <label for="edit-location">Location:</label>
                     <input type="text" id="edit-location" class="form-control">
                 </div>
+
                 <div class="form-group">
                     <h4>Profile image:</h4>
                     <label for="edit-image" class="upload">Upload image</label>
-                    <input type="file" id="edit-image" class="form-control" accept="image/jpeg, image/png, image/jpg" onchange="updateProfileImage(event)">
+                    <input type="file" id="edit-image" class="form-control" accept="image/jpeg, image/png, image/jpg"
+                        onchange="updateProfileImage(event)">
                 </div>
                 <button type="submit" class="btn btn-primary mb-5">Save Changes</button>
             </form>
         </div>
-        
+
     </div>
 
     <!-- jQuery and Bootstrap JS -->

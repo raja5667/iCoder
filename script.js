@@ -32,6 +32,37 @@ if (toggleButton) {
     });
 }
 
+let lastColor = ""; // Store the last applied color
+
+function getRandomLightColor() {
+    let newColor;
+    do {
+        const r = Math.floor(180 + Math.random() * 75); // Red (180–255)
+        const g = Math.floor(180 + Math.random() * 75); // Green (180–255)
+        const b = Math.floor(180 + Math.random() * 75); // Blue (180–255)
+        newColor = `rgb(${r}, ${g}, ${b})`; // Generate an RGB color
+    } while (newColor === lastColor); // Ensure the new color is not the same as the last one
+    lastColor = newColor; // Update the last color
+    return newColor;
+}
+
+function changeBackgroundColor() {
+    const accountElement = document.querySelector('.account');
+    if (accountElement) {
+        const newColor = getRandomLightColor();
+        accountElement.style.backgroundColor = newColor;
+    }
+}
+
+// Start continuous color changing
+function startColorChange() {
+    setInterval(changeBackgroundColor, 1000); // Change color every second
+}
+
+// Call the function to start changing colors indefinitely
+startColorChange();
+
+
 // Sign-up Form Handling
 const signupForm = document.querySelector("#signup-form");
 if (signupForm) {
@@ -83,16 +114,10 @@ if (signupForm) {
     });
 }
 
+
 // Login Form Handling
 const loginForm = document.querySelector("#loginForm");
 if (loginForm) {
-    // Prepopulate the email field if "Remember Me" is active
-    const rememberedEmail = localStorage.getItem("rememberedEmail");
-    if (rememberedEmail) {
-        document.getElementById("email").value = rememberedEmail;
-        document.getElementById("rememberMe").checked = true;
-    }
-
     loginForm.addEventListener("submit", function (event) {
         event.preventDefault();
 
@@ -112,11 +137,13 @@ if (loginForm) {
             return;
         }
 
+        // Ensure email is validated and matches
         if (login_email !== storedUser.email) {
             createAlertBox("Email does not match.");
             return;
         }
 
+        // Ensure password is validated and matches
         if (login_password !== storedUser.password) {
             createAlertBox("Password does not match.");
             return;
@@ -135,6 +162,7 @@ if (loginForm) {
         window.location.href = "index.html";
     });
 }
+
 
 // Function to create a styled alert box
 function createAlertBox(message) {
@@ -227,7 +255,7 @@ function loadProfile() {
     }
 }
 
-// Update profile and save to localStorage
+// Update profile and save to localStorage without updating the password
 function updateProfile(event) {
     event.preventDefault();
 
@@ -242,6 +270,8 @@ function updateProfile(event) {
         phone: form["edit-phone"].value || "+91 6289177529",
         location: form["edit-location"].value || "North India",
         profilePic: document.getElementById("profile-pic").src, // Get profile picture URL
+        // Password remains unchanged
+        password: JSON.parse(localStorage.getItem("user"))?.password || ""
     };
 
     // Save updated data to localStorage
@@ -251,6 +281,7 @@ function updateProfile(event) {
     loadProfile();
     toggleEditForm();
 }
+
 
 // Update profile image when a new file is selected
 const label = document.querySelector('label[for="edit-image"]'); // Get the label associated with the file input

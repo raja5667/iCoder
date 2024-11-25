@@ -177,45 +177,60 @@ input:checked+.slider:before {
     color: white;
 }
 
-.profile-img {
-    width: 40px;
-    height: 40px;
+.account {
+    display: flex;
+    background-color: bisque;
+    width: fit-content;
     border-radius: 50%;
-    object-fit: cover;
+    transition: background-color 2s ease;
+    align-items: center;
 }
 
 /* Style the dropdown menu */
 .custom-dropdown {
-    background-color: #f8f9fa; /* Light background */
-    border: 1px solid #ddd;   /* Add a border */
-    border-radius: 8px;       /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    padding: 8px 0;           /* Padding between items */
+    background-color: #f8f9fa;
+    /* Light background */
+    border: 1px solid #ddd;
+    /* Add a border */
+    border-radius: 8px;
+    /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    padding: 8px 0;
+    /* Padding between items */
 }
 
 /* Style dropdown items */
 .custom-dropdown .dropdown-item {
-    color: #343a40;           /* Dark text */
-    font-size: 14px;          /* Adjust font size */
-    padding: 10px 20px;       /* Add padding */
+    color: #343a40;
+    /* Dark text */
+    font-size: 14px;
+    /* Adjust font size */
+    padding: 10px 20px;
+    /* Add padding */
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 /* Hover effect for dropdown items */
 .custom-dropdown .dropdown-item:hover {
-    background-color: #007bff; /* Primary color on hover */
-    color: #fff;               /* White text */
+    background-color: #007bff;
+    /* Primary color on hover */
+    color: #fff;
+    /* White text */
 }
 
 /* Divider styling */
 .custom-dropdown .dropdown-divider {
-    margin: 0.5rem 0;          /* Space around divider */
-    border-color: #e9ecef;     /* Light divider color */
+    margin: 0.5rem 0;
+    /* Space around divider */
+    border-color: #e9ecef;
+    /* Light divider color */
 }
 
 /* Optional: Customize specific items */
 .custom-dropdown .text-danger {
-    font-weight: bold;         /* Make 'Logout' bold */
+    font-weight: bold;
+    /* Make 'Logout' bold */
 }
 
 /* Add animation (optional) */
@@ -228,6 +243,7 @@ input:checked+.slider:before {
         opacity: 0;
         transform: translateY(-10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
