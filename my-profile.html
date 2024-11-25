@@ -4,206 +4,270 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Profile</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Enhanced Profile with Progress Bars</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #f8f9fa;
+            background: radial-gradient(circle, #f4f6f9, #e1e5ea);
+            font-family: 'Poppins', sans-serif;
+            animation: fadeInBackground 2s ease-in-out;
         }
 
         .profile-header {
-            background: linear-gradient(135deg, #007bff, #6610f2);
-            color: white;
-            padding: 40px 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .profile-header img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 4px solid white;
-        }
-
-        .profile-header h2 {
-            margin-top: 15px;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .profile-header p {
-            font-size: 16px;
-        }
-
-        .section-title {
-            font-size: 24px;
-            margin-bottom: 20px;
-            font-weight: bold;
-            color: #333;
-        }
-
-        .card {
+            position: relative;
+            margin-bottom: 30px;
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #00c6ff, #0072ff);
             border-radius: 10px;
-            border: none;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            color: white;
+            animation: slideDown 1.5s ease-in-out;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
-        .card-body {
-            padding: 20px;
+        .pr {
+            position: absolute;
+            width: fit-content;
+            top: 10px;
+            transform: rotate(90deg);
+            cursor: pointer;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            transition: transform 0.5s, box-shadow 0.5s;
+            animation: float 3s infinite alternate;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.2) rotate(10deg);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
 
         .btn-edit {
-            background-color: #007bff;
+            background: linear-gradient(90deg, #ff6a00, #ff9d00);
+            border: none;
+            padding: 12px 25px;
             color: white;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            animation: popUp 1.5s ease-in-out;
         }
 
         .btn-edit:hover {
+            background: linear-gradient(90deg, #ff9d00, #ff6a00);
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 8px 20px rgba(255, 106, 0, 0.5);
+        }
+
+        .info-card,
+        .skills-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .skills-card .progress {
+            height: 20px;
+            background: #f0f0f0;
+            border-radius: 50px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .skills-card .progress-bar {
+            background: linear-gradient(90deg, #ff6a00, #ff9d00);
+            font-size: 14px;
+            color: white;
+            line-height: 20px;
+            text-align: center;
+            width: 0;
+            animation: progressFill 2s ease forwards;
+            border-radius: 50px;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-15px);
+            }
+        }
+
+        @keyframes fadeInBackground {
+            from {
+                background: #e0e0e0;
+            }
+
+            to {
+                background: radial-gradient(circle, #f4f6f9, #e1e5ea);
+            }
+        }
+
+        @keyframes slideDown {
+            0% {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes popUp {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes progressFill {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        #edit-image {
+            display: none;
+        }
+
+        /* Style the label as a button */
+        .upload {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            /* Full width for consistency */
+        }
+
+        .upload:hover {
             background-color: #0056b3;
         }
 
-        .info-item {
-            font-size: 16px;
-            margin-bottom: 15px;
-        }
-
-        .info-label {
-            font-weight: bold;
-        }
-
-        .info-value {
-            margin-left: 10px;
-            color: #555;
-        }
-
-        .activity-card {
-            margin-top: 20px;
-        }
-
-        .activity-card h5 {
-            font-weight: bold;
-        }
-
-        .activity-card ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .activity-card ul li {
-            margin-bottom: 10px;
+        /* Ensure label's hover effect mimics a button's */
+        .upload:active {
+            background-color: #004494;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
 
 <body>
-
-    <!-- Profile Header -->
-    <div class="profile-header text-center">
-        <img src="profile-pic.jpg" alt="Profile Picture">
-        <h2>Dhrubajyoti Das</h2>
-        <p>Web Developer & Digital Marketer</p>
+    <div class="profile-header">
+        <div class="pr">
+            <a href="index.html">
+                <img src="down arrow.svg" alt="">
+            </a>
+        </div>
+        <img id="profile-pic" class="profile-img" src="https://via.placeholder.com/150" alt="Profile Picture">
+        <h2 id="profile-name">Dhrubajyoti Das</h2>
+        <p id="profile-role">Web Designer | Developer | Entrepreneur</p>
+        <button class="btn-edit" onclick="toggleEditForm()">Edit Profile</button>
     </div>
 
-    <!-- Main Content -->
-    <div class="container mt-5">
-        <div class="row">
-            <!-- Personal Info Section -->
-            <div class="col-md-6">
-                <h2 class="section-title">Personal Information</h2>
-                <div class="card">
-                    <div class="card-body">
-                        <div class="info-item">
-                            <span class="info-label">Name:</span>
-                            <span class="info-value">Dhrubajyoti Das</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Email:</span>
-                            <span class="info-value">dhrubajyoti@example.com</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Phone:</span>
-                            <span class="info-value">+91 6289177529</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Location:</span>
-                            <span class="info-value">North India</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Date of Birth:</span>
-                            <span class="info-value">March 10, 2003</span>
-                        </div>
-                        <button class="btn btn-edit btn-block mt-3">Edit Information</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Activity Summary Section -->
-            <div class="col-md-6">
-                <h2 class="section-title">Activity Summary</h2>
-                <div class="card activity-card">
-                    <div class="card-body">
-                        <h5>Recent Activities</h5>
-                        <ul>
-                            <li>Updated profile picture on Nov 20, 2024.</li>
-                            <li>Completed a web development project on Nov 15, 2024.</li>
-                            <li>Achieved 5-star rating for a design service on Nov 10, 2024.</li>
-                        </ul>
-                        <h5>Skills</h5>
-                        <ul>
-                            <li>Web Design & Development</li>
-                            <li>SEO Optimization</li>
-                            <li>Digital Marketing</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+    <div class="container">
+        <div class="info-card">
+            <h4>About Me</h4>
+            <p id="profile-about">I am passionate about web development and creating user-friendly designs that resonate
+                with people.</p>
         </div>
 
-        <!-- Editable Section -->
-        <div class="row mt-5">
-            <div class="col-md-12">
-                <h2 class="section-title">Update Your Details</h2>
-                <div class="card">
-                    <div class="card-body">
-                        <form>
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="name">Name</label>
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="email">Email</label>
-                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="phone">Phone</label>
-                                    <input type="text" class="form-control" id="phone" placeholder="Your Phone">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="dob">Date of Birth</label>
-                                    <input type="date" class="form-control" id="dob">
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn-edit btn-block">Save Changes</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+        <div class="info-card">
+            <h4>Personal Information</h4>
+            <p><strong>Email:</strong> <span id="profile-email"></span></p>
+            <p><strong>Phone:</strong> <span id="profile-phone"></span></p>
+            <p><strong>Location:</strong> <span id="profile-location"></span></p>
         </div>
+
+        <div class="edit-form-container" id="edit-form-container" style="display:none;">
+            <h4>Edit Profile</h4>
+            <form id="edit-form" onsubmit="updateProfile(event)">
+                <div class="form-group">
+                    <label for="edit-firstname">First Name:</label>
+                    <input type="text" id="edit-firstname" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-lastname">Last Name:</label>
+                    <input type="text" id="edit-lastname" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-role">Role:</label>
+                    <input type="text" id="edit-role" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-about">About Me:</label>
+                    <textarea id="edit-about" class="form-control" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="edit-email">Email:</label>
+                    <input type="email" id="edit-email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-phone">Phone:</label>
+                    <input type="text" id="edit-phone" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="edit-location">Location:</label>
+                    <input type="text" id="edit-location" class="form-control">
+                </div>
+                <div class="form-group">
+                    <h4>Profile image:</h4>
+                    <label for="edit-image" class="upload">Upload image</label>
+                    <input type="file" id="edit-image" class="form-control" accept="image/jpeg, image/png, image/jpg" onchange="updateProfileImage(event)">
+                </div>
+                <button type="submit" class="btn btn-primary mb-5">Save Changes</button>
+            </form>
+        </div>
+        
     </div>
 
-    <!-- Footer -->
-    <footer class="text-center py-4 mt-5">
-        <p>&copy; 2024 Dhrubajyoti Das. All Rights Reserved.</p>
-    </footer>
-
-    <!-- Optional JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script src="script.js"></script>
 </body>
 
 </html>

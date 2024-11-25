@@ -66,13 +66,13 @@
                         <img class="icon" src="sun.svg" alt="Toggle Icon">
                     </i>
                 </form>
-                <div class="dropdown account ml-3" style="cursor: pointer;">
-                    <img class="profile-img dropdown-toggle" src="kd.jpg" alt="Profile" id="profileDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="profile-dropdown dropdown account ml-3" style="cursor: pointer;">
+                    <img class="profile-img dropdown-toggle" src="kd.jpg" alt="Profile" id="profile-dropdown-img" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="dropdown-menu dropdown-menu-right custom-dropdown" aria-labelledby="profileDropdown">
-                        <a class="dropdown-item" href="/profile.html">My Profile</a>
+                        <a class="dropdown-item" href="my-profile.html">My Profile</a>
                         <a class="dropdown-item" href="/settings.html">Settings</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item text-danger" href="/logout.html">Logout</a>
+                        <a id="logout-button" class="dropdown-item text-danger">Logout</a>
                     </div>
                 </div>                
             </div>
@@ -292,47 +292,6 @@
     <script src="script.js"></script> <!-- Include script.js for any additional JS -->
 
     <script>
-        // Check for the flag in localStorage
-        const showWelcomeMessage = localStorage.getItem("showWelcomeMessage");
-        const firstName = localStorage.getItem("main_firstname"); // Retrieve the first name stored during sign-up
-
-        if (showWelcomeMessage === "true") {
-            // Create the alert box dynamically
-            const alertBox = document.createElement("div");
-
-            // Display personalized welcome message if the first name exists
-            if (firstName) {
-                alertBox.textContent = `Hi ${firstName}! Welcome to iCoder!`;
-            } else {
-                alertBox.textContent = "Hi! Welcome to iCoder!";
-            }
-
-            // Style the alert box
-            alertBox.style.position = "fixed";
-            alertBox.style.top = "10px";
-            alertBox.style.left = "50%";
-            alertBox.style.transform = "translateX(-50%)";
-            alertBox.style.backgroundColor = "#f8d7da";
-            alertBox.style.color = "#721c24";
-            alertBox.style.padding = "15px 20px";
-            alertBox.style.border = "1px solid #f5c6cb";
-            alertBox.style.borderRadius = "5px";
-            alertBox.style.fontSize = "16px";
-            alertBox.style.fontWeight = "bold";
-            alertBox.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.2)";
-            alertBox.style.zIndex = "1000";
-
-            // Append the alert box to the document body
-            document.body.appendChild(alertBox);
-
-            // Remove the alert box after 5 seconds
-            setTimeout(() => {
-                alertBox.remove();
-            }, 5000);
-
-            // Clear the flag from localStorage to prevent showing the message again
-            localStorage.removeItem("showWelcomeMessage");
-        }
     </script>
 
 </body>
