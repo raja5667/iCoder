@@ -179,11 +179,12 @@ input:checked+.slider:before {
 
 .account {
     display: flex;
+    align-items: center;
+    margin-left: 10px;
     background-color: bisque;
     width: fit-content;
     border-radius: 50%;
     transition: background-color 2s ease;
-    align-items: center;
 }
 
 /* Style the dropdown menu */
@@ -237,6 +238,24 @@ input:checked+.slider:before {
 .custom-dropdown {
     animation: fadeIn 0.3s ease-in-out;
 }
+
+@media (max-width: 768px) {
+    .account {
+        margin-left: 0;
+        margin-top: 10px;
+        text-align: center;
+        /* Aligns the account dropdown in the center */
+    }
+
+    .dropdown-menu {
+        left: 0;
+        /* Ensures the dropdown menu aligns properly */
+        right: auto;
+        /* Prevents it from stretching across the screen */
+    }
+}
+
+
 
 @keyframes fadeIn {
     from {

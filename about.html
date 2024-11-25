@@ -31,9 +31,25 @@
         /* Slightly larger shadow on hover */
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5), 0 12px 40px rgba(0, 0, 0, 0.15);
     }
+
+    .icon {
+        transition: opacity 0.5s ease-in-out;
+        /* Smooth transition for opacity changes */
+    }
+
+    .fade-out {
+        opacity: 0;
+        /* Fully transparent */
+    }
+
+    .fade-in {
+        opacity: 1;
+        /* Fully opaque */
+    }
 </style>
 
 <body>
+    <!-- Navbar with Offcanvas Sidebar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">iCoder</a>
@@ -44,10 +60,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" href="/">Home</a>
+                        <a class="nav-link active" href="/" style="color: #ffc107;">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/about.html" style="color: #ffc107;">About</a>
+                        <a class="nav-link" href="/about.html">About</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -79,7 +95,7 @@
                         <img class="icon" src="sun.svg" alt="Toggle Icon">
                     </i>
                 </form>
-                <div class="profile-dropdown dropdown account ml-3" style="cursor: pointer;">
+                <div class="profile-dropdown dropdown account" style="cursor: pointer;">
                     <img class="profile-img dropdown-toggle" src="person-circle.svg" alt="Profile"
                         id="profile-dropdown-img" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="dropdown-menu dropdown-menu-right custom-dropdown" aria-labelledby="profileDropdown">

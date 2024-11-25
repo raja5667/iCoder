@@ -17,20 +17,34 @@ var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
     firstScript.parentNode.insertBefore(script, firstScript);
 })();
 
-// Dark Mode Toggle
 const toggleButton = document.getElementById("mode-icon");
+
 if (toggleButton) {
     toggleButton.addEventListener("click", function () {
-        setTimeout(() => {
-            document.body.classList.toggle("dark-mode");
-            const icon = document.querySelector("#mode-icon img");
+        const icon = document.querySelector("#mode-icon img");
 
-            if (icon) {
+        if (icon) {
+            // Add fade-out class
+            icon.classList.add("fade-out");
+
+            // Wait for the fade-out effect to complete before changing the icon
+            setTimeout(() => {
+                document.body.classList.toggle("dark-mode");
                 icon.src = document.body.classList.contains("dark-mode") ? "moon.svg" : "sun.svg";
-            }
-        }, 500); // 500ms delay
+
+                // Remove fade-out and add fade-in class
+                icon.classList.remove("fade-out");
+                icon.classList.add("fade-in");
+
+                // Remove fade-in class after the animation completes
+                setTimeout(() => {
+                    icon.classList.remove("fade-in");
+                }, 500); // Match the fade-in duration
+            }, 500); // Match the fade-out duration
+        }
     });
 }
+
 
 let lastColor = ""; // Store the last applied color
 

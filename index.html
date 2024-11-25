@@ -18,7 +18,20 @@
     <link rel="stylesheet" href="style.css">
     <!-- Custom CSS for additional styling -->
 </head>
+<style>
+    .icon {
+    transition: opacity 0.5s ease-in-out; /* Smooth transition for opacity changes */
+}
 
+.fade-out {
+    opacity: 0; /* Fully transparent */
+}
+
+.fade-in {
+    opacity: 1; /* Fully opaque */
+}
+
+</style>
 <body>
     <!-- Navbar with Offcanvas Sidebar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -66,7 +79,7 @@
                         <img class="icon" src="sun.svg" alt="Toggle Icon">
                     </i>
                 </form>
-                <div class="profile-dropdown dropdown account ml-3" style="cursor: pointer;">
+                <div class="profile-dropdown dropdown account" style="cursor: pointer;">
                     <img class="profile-img dropdown-toggle" src="person-circle.svg" alt="Profile" id="profile-dropdown-img"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="dropdown-menu dropdown-menu-right custom-dropdown" aria-labelledby="profileDropdown">
