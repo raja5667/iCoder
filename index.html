@@ -20,18 +20,21 @@
 </head>
 <style>
     .icon {
-    transition: opacity 0.5s ease-in-out; /* Smooth transition for opacity changes */
-}
+        transition: opacity 0.5s ease-in-out;
+        /* Smooth transition for opacity changes */
+    }
 
-.fade-out {
-    opacity: 0; /* Fully transparent */
-}
+    .fade-out {
+        opacity: 0;
+        /* Fully transparent */
+    }
 
-.fade-in {
-    opacity: 1; /* Fully opaque */
-}
-
+    .fade-in {
+        opacity: 1;
+        /* Fully opaque */
+    }
 </style>
+
 <body>
     <!-- Navbar with Offcanvas Sidebar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -80,8 +83,8 @@
                     </i>
                 </form>
                 <div class="profile-dropdown dropdown account" style="cursor: pointer;">
-                    <img class="profile-img dropdown-toggle" src="person-circle.svg" alt="Profile" id="profile-dropdown-img"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img class="profile-img dropdown-toggle" src="person-circle.svg" alt="Profile"
+                        id="profile-dropdown-img" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="dropdown-menu dropdown-menu-right custom-dropdown" aria-labelledby="profileDropdown">
                         <a class="dropdown-item" href="my-profile.html">My Profile</a>
                         <a class="dropdown-item" href="/settings.html">Settings</a>
@@ -135,6 +138,7 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
+
     <!-- Services Section with New Features -->
     <div class="container mt-5">
         <h2 class="section-title text-center mb-4">Our Services</h2>
@@ -175,7 +179,6 @@
             </div>
         </div>
     </div>
-
     <!-- Pricing Table Section -->
     <div class="container mt-5">
         <h2 class="section-title text-center mb-4">Our Pricing Plans</h2>
@@ -230,67 +233,6 @@
             </div>
         </div>
     </div>
-
-    <!-- FAQ Section -->
-    <div class="container mt-5">
-        <h2 class="section-title text-center mb-4">Frequently Asked Questions</h2>
-        <div class="accordion" id="faqAccordion">
-            <div class="card">
-                <div class="card-header" id="headingOne">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
-                            aria-expanded="true" aria-controls="collapseOne">
-                            What services do you offer?
-                        </button>
-                    </h5>
-                </div>
-                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#faqAccordion">
-                    <div class="card-body">
-                        We offer web development, SEO optimization, and digital marketing services.
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header" id="headingTwo">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                            data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            How do I contact support?
-                        </button>
-                    </h5>
-                </div>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqAccordion">
-                    <div class="card-body">
-                        You can contact us via the contact form on our website or through email at support@icoder.com.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Contact Form with Form Inputs and Validation -->
-    <div class="container mt-5">
-        <h2 class="section-title text-center mb-4">Contact Us</h2>
-        <form action="/submit" method="POST">
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="Your Name" required>
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Your Email" required>
-                    <div class="invalid-feedback">Please provide a valid email.</div> <!-- Error message -->
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea class="form-control" id="message" rows="4" placeholder="Your Message" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Send Message</button>
-        </form>
-    </div>
-
     <!-- Footer Section -->
     <footer class="bg-dark text-white text-center py-4 mt-5">
         <p>&copy; 2024 iCoder. All Rights Reserved.</p>
@@ -306,6 +248,7 @@
     <script src="script.js"></script> <!-- Include script.js for any additional JS -->
 
     <script>
+        
     </script>
 
 </body>
