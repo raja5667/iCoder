@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+
+        header {
+            position: relative;
+            background: linear-gradient(45deg, #007bff, #4b79a1);
+            color: white;
+            text-align: center;
+        }
+
+        .pr {
+            position: absolute;
+            width: fit-content;
+            left: 10px;
+            top: 10px;
+            transform: rotate(90deg);
+            cursor: pointer;
+        }
+
+        .contact-form h2 {
+            color: #007bff;
+        }
+
+        .contact-form .form-control {
+            border-radius: 0.5rem;
+        }
+
+        .map {
+            height: 300px;
+            background: url('https://via.placeholder.com/600x300') center/cover no-repeat;
+            border: 1px solid #ddd;
+            border-radius: 0.5rem;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="bg-primary text-white py-5">
+        <div class="pr">
+            <a href="home.html">
+                <img src="down arrow.svg" alt="">
+            </a>
+        </div>
+        <div class="container text-center">
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you! Get in touch with us for any queries.</p>
+        </div>
+    </header>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Form Column -->
+                <div class="col-lg-6 mb-4">
+                    <h2 class="mb-3">Get in Touch</h2>
+                    <p>Fill out the form, and we'll get back to you within 24 hours!</p>
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" placeholder="example@example.com"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="4" placeholder="Your message here..."
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                    </form>
+                </div>
+                <!-- Contact Info Column -->
+                <div class="col-lg-6">
+                    <h2 class="mb-3">Contact Information</h2>
+                    <p class="mb-2"><strong>Email:</strong> raja2863a@gmail.com</p>
+                    <p class="mb-2"><strong>Phone:</strong> +916289177529</p>
+                    <p class="mb-2"><strong>Address:</strong> 260, Balia Main Rd, Balia Middle Town, Garia, Rajpur
+                        Sonarpur, West Bengal 700084</p>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3687.0269366528732!2d88.39595977475405!3d22.465622036883754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02718108aff765%3A0x191194e2bdac61d1!2s260%2C%20Balia%20Main%20Rd%2C%20Balia%20Middle%20Town%2C%20Garia%2C%20Rajpur%20Sonarpur%2C%20West%20Bengal%20700084!5e0!3m2!1sen!2sin!4v1732655892182!5m2!1sen!2sin"
+                        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Your Company. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js">
+
+    </script>
+</body>
+
+</html>

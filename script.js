@@ -5,18 +5,6 @@ if (typeof ScrollReveal !== "undefined") {
     ScrollReveal().reveal('.carousel-caption', { delay: 500 });
 }
 
-// Tawk.to Live Chat Integration
-var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-(function () {
-    var script = document.createElement("script"),
-        firstScript = document.getElementsByTagName("script")[0];
-    script.async = true;
-    script.src = 'https://embed.tawk.to/67393b162480f5b4f59f23ff/1icrotklm';
-    script.charset = 'UTF-8';
-    script.setAttribute('crossorigin', '*');
-    firstScript.parentNode.insertBefore(script, firstScript);
-})();
-
 const toggleButton = document.getElementById("mode-icon");
 
 if (toggleButton) {
@@ -173,7 +161,7 @@ if (loginForm) {
         localStorage.setItem("main_firstname", storedUser.firstname);
 
         console.log("Login successful. Redirecting to profile...");
-        window.location.href = "index.html";
+        window.location.href = "home.html";
     });
 }
 
@@ -355,3 +343,33 @@ function populateEditForm() {
         document.getElementById("edit-location").value = storedUser.location || '';
     }
 }
+
+
+// Form Submission Handling
+document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    // Retrieve form inputs
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    // Validate input fields
+    if (!name || !email || !message) {
+        alert('Please fill in all fields correctly!');
+        return; // Stop further execution if fields are invalid
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address.');
+        return;
+    }
+
+    // Proceed if everything is valid
+    alert(`Thank you, ${name}, for reaching out! We will contact you at ${email} shortly.`);
+
+    // Reset the form fields after successful submission
+    this.reset();
+});

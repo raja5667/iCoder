@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore web development, SEO, and digital marketing insights.">
+<meta name="keywords" content="Web Development, SEO, Digital Marketing, Blog">
+    <title>My Awesome Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- AOS - Animate on Scroll -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" href="path-to-favicon.ico" type="image/x-icon">
+</head>
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f8f9fa;
+    }
+
+    /* Navbar Styling */
+    .navbar {
+        background-color: #007bff;
+    }
+
+    .navbar-brand {
+        color: #fff;
+    }
+
+    .navbar-nav .nav-link {
+        color: #fff;
+        font-size: 1.1rem;
+        margin-right: 15px;
+    }
+
+    .navbar-nav .nav-link:hover {
+        color: #ffd700;
+    }
+
+    /* Hero Section */
+    .hero-section {
+        background: url('welcome.webp') no-repeat center center;
+        background-size: 1500px 500px;
+        background-size: cover;
+        color: #fff;
+        text-align: center;
+        padding: 100px 0;
+        position: relative;
+    }
+
+    
+
+    .hero-section h1 {
+        font-size: 3.5em;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    .hero-section p {
+        font-size: 1.5em;
+    }
+
+    /* Post Card */
+    .post-card {
+        margin-bottom: 30px;
+        border: none;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .post-card:hover {
+        transform: scale(1.05);
+    }
+
+    .post-card img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .post-card .card-body {
+        padding: 20px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .post-card h3 {
+        font-size: 2em;
+        margin-bottom: 15px;
+    }
+
+    .post-card p {
+        color: #666;
+        font-size: 1.1em;
+    }
+
+    .post-card a {
+        font-weight: bold;
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    .post-card a:hover {
+        color: #0056b3;
+    }
+
+    /* Sidebar */
+    .sidebar {
+        background-color: #f1f1f1;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar h4 {
+        font-size: 1.5em;
+    }
+
+    .sidebar ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .sidebar ul li a {
+        font-size: 1.1em;
+        color: #007bff;
+        text-decoration: none;
+        margin-bottom: 10px;
+    }
+
+    .sidebar ul li a:hover {
+        color: #0056b3;
+    }
+
+    /* Footer */
+    .footer {
+        background-color: #343a40;
+        color: #fff;
+        padding: 30px 0;
+        text-align: center;
+    }
+
+    /* Comment Box */
+    .comment-box input,
+    .comment-box textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 1.1em;
+    }
+
+    .comment-box button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1.1em;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .comment-box button:hover {
+        background-color: #0056b3;
+    }
+
+    .comment {
+        margin-top: 20px;
+        background-color: #f8f9fa;
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .comment .author {
+        font-weight: bold;
+    }
+
+    .comment .date {
+        font-size: 0.9em;
+        color: #888;
+    }
+
+    /* Carousel */
+    .carousel-item img {
+        width: 100%;
+        height: 450px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+</style>
+
+<body>
+    <!-- Navbar with Offcanvas Sidebar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">iCoder</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Services
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Web Design</a>
+                            <a class="dropdown-item" href="#">SEO</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Marketing</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="conactus.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html" style="color: #ffc107;">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/pricing.html">Pricing</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    <!-- Dark/Light Mode Toggle Button -->
+                    <i class="fas ml-2" id="mode-icon" style="cursor: pointer;">
+                        <img class="icon" src="sun.svg" alt="Toggle Icon">
+                    </i>
+                </form>
+                <div class="profile-dropdown dropdown account" style="cursor: pointer;">
+                    <img class="profile-img dropdown-toggle" src="person-circle.svg" alt="Profile"
+                        id="profile-dropdown-img" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="dropdown-menu dropdown-menu-right custom-dropdown" aria-labelledby="profileDropdown">
+                        <a class="dropdown-item" href="my-profile.html">My Profile</a>
+                        <a class="dropdown-item" href="/settings.html">Settings</a>
+                        <div class="dropdown-divider"></div>
+                        <a id="logout-button" class="dropdown-item text-danger">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section" data-aos="fade-up">
+        <h1>Welcome to My Blog</h1>
+        <p>Latest Trends and Insights on Web Development, Technology, and Digital Marketing</p>
+    </div>
+
+    <!-- Featured Posts Carousel -->
+    <div class="container my-5">
+        <div id="featuredPostsCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="DALL·E 2024-11-27 11.13.55 - A modern and visually striking concept for a portfolio website, featuring a sleek, professional design. The image includes a laptop displaying a color.webp"
+                        alt="Featured Post 1">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Building a Portfolio Website</h5>
+                        <p>Learn how to create a stunning portfolio website that showcases your skills and projects.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="seo.webp" alt="Featured Post 2">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Understanding SEO for Beginners</h5>
+                        <p>Boost your website's search engine rankings with these beginner-friendly SEO strategies.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="Marketing.webp" alt="Featured Post 3">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>The Future of Digital Marketing</h5>
+                        <p>Stay ahead of the curve by understanding the latest trends and tactics in digital marketing.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#featuredPostsCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#featuredPostsCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Blog Posts Section -->
+    <div class="container my-5">
+        <div class="row">
+            <!-- Blog Posts -->
+            <div class="col-lg-8">
+                <div class="row">
+                    <!-- Post 1 -->
+                    <div class="col-md-6" data-aos="fade-up">
+                        <div class="card post-card">
+                            <img src="aade1ba5-d706-4ec3-868c-b115272e6dfe.webp" alt="Post Image">
+                            <div class="card-body">
+                                <h3 class="card-title">How to Build a Responsive Website</h3>
+                                <p class="card-text" id="post-text-1">
+                                    Learn how to design and build a responsive website that adapts to any screen size
+                                    and device.
+                                    <span id="more-1" class="more-text" style="display:none;"> This article covers
+                                        everything from fluid grids to media queries, making sure your website looks
+                                        great on desktops, tablets, and mobile phones.</span>
+                                </p>
+                                <div class="btn btn-link" onclick="toggleContent(1)">Read More</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Post 2 -->
+                    <div class="col-md-6" data-aos="fade-up">
+                        <div class="card post-card">
+                            <img src="c64c644bd-d337-4f52-a781-e3c003016933.webp" alt="Post Image">
+                            <div class="card-body">
+                                <h3 class="card-title">Mastering JavaScript for Beginners</h3>
+                                <p class="card-text" id="post-text-2">
+                                    An essential guide for mastering JavaScript, the most popular web development
+                                    language.
+                                    <span id="more-2" class="more-text" style="display:none;"> This post walks you
+                                        through the key concepts in JavaScript like variables, functions, and loops.
+                                        Whether you're starting fresh or refreshing your skills, this guide is for
+                                        you!</span>
+                                </p>
+                                <div class="btn btn-link" onclick="toggleContent(2)">Read More</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Post 3 -->
+                    <div class="col-md-6" data-aos="fade-up">
+                        <div class="card post-card">
+                            <img src="path-to-image3.webp" alt="Post Image">
+                            <div class="card-body">
+                                <h3 class="card-title">SEO Best Practices for 2024</h3>
+                                <p class="card-text" id="post-text-3">
+                                    Stay ahead with the latest SEO strategies that will boost your website's visibility
+                                    in 2024.
+                                    <span id="more-3" class="more-text" style="display:none;"> This post covers
+                                        keyword research, on-page SEO, and how to optimize your content to rank higher
+                                        on Google.</span>
+                                </p>
+                                <div class="btn btn-link" onclick="toggleContent(3)">Read More</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Post 4 -->
+                    <div class="col-md-6" data-aos="fade-up">
+                        <div class="card post-card">
+                            <img src="path-to-image4.webp" alt="Post Image">
+                            <div class="card-body">
+                                <h3 class="card-title">The Future of Web Development</h3>
+                                <p class="card-text" id="post-text-4">
+                                    Explore the upcoming trends and technologies that will shape the future of web
+                                    development.
+                                    <span id="more-4" class="more-text" style="display:none;"> From AI integration to
+                                        Progressive Web Apps, discover what you need to know to stay relevant in the
+                                        field.</span>
+                                </p>
+                                <div class="btn btn-link" onclick="toggleContent(4)">Read More</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Post 5 -->
+                    <div class="col-md-6" data-aos="fade-up">
+                        <div class="card post-card">
+                            <img src="path-to-image5.webp" alt="Post Image">
+                            <div class="card-body">
+                                <h3 class="card-title">Understanding React.js for Beginners</h3>
+                                <p class="card-text" id="post-text-5">
+                                    A beginner's guide to understanding and working with React.js, one of the most
+                                    popular JavaScript libraries for building user interfaces.
+                                    <span id="more-5" class="more-text" style="display:none;"> This article walks you
+                                        through setting up a React project, JSX syntax, and creating your first React
+                                        components.</span>
+                                </p>
+                                <div class="btn btn-link" onclick="toggleContent(5)">Read More</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Post 6 -->
+                    <div class="col-md-6" data-aos="fade-up">
+                        <div class="card post-card">
+                            <img src="path-to-image6.webp" alt="Post Image">
+                            <div class="card-body">
+                                <h3 class="card-title">Intro to Python for Web Development</h3>
+                                <p class="card-text" id="post-text-6">
+                                    Learn how Python can be used in web development, from server-side scripting to
+                                    automation.
+                                    <span id="more-6" class="more-text" style="display:none;"> This guide introduces
+                                        web frameworks like Flask and Django, and how they can help you build dynamic
+                                        websites.</span>
+                                </p>
+                                <div class="btn btn-link" onclick="toggleContent(6)">Read More</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Sidebar -->
+                    <div class="col-lg-4">
+                        <div class="sidebar">
+                            <h4>Popular Posts</h4>
+                            <ul>
+                                <li><a href="#">Creating a Stunning UI with CSS</a></li>
+                                <li><a href="#">Responsive Web Design: Best Practices</a></li>
+                                <li><a href="#">How to Improve Website Speed</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Comment Section -->
+    <div class="container my-5">
+        <div class="comment-box">
+            <h4>Leave a Comment</h4>
+            <input type="text" id="comment-name" placeholder="Your Name">
+            <textarea id="comment-text" rows="4" placeholder="Your Comment"></textarea>
+            <button onclick="postComment()">Submit Comment</button>
+        </div>
+        <div id="comments-section">
+            <!-- Comments will be added here dynamically -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 My Awesome Blog. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS and Dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Custom JS -->
+    <script>
+        // Initialize AOS (Animate on Scroll)
+        AOS.init();
+
+        // Function to handle comment submission
+        function postComment() {
+            let name = document.getElementById('comment-name').value;
+            let text = document.getElementById('comment-text').value;
+
+            if (name && text) {
+                let commentSection = document.getElementById('comments-section');
+                let comment = document.createElement('div');
+                comment.classList.add('comment');
+                comment.innerHTML = `
+                    <div class="author">${name}</div>
+                    <div class="date">${new Date().toLocaleString()}</div>
+                    <p>${text}</p>
+                `;
+                commentSection.appendChild(comment);
+
+                // Clear inputs
+                document.getElementById('comment-name').value = '';
+                document.getElementById('comment-text').value = '';
+            }
+        }
+
+        // Toggle Read More/Read Less functionality
+        function toggleContent(postId) {
+            const moreText = document.getElementById(`more-${postId}`);
+            const btn = document.querySelector(`#post-text-${postId} + .btn-link`);
+
+            if (moreText.style.display === "none") {
+                moreText.style.display = "inline";
+                btn.textContent = "Read Less";
+            } else {
+                moreText.style.display = "none";
+                btn.textContent = "Read More";
+            }
+        }
+
+    </script>
+</body>
+
+</html>
