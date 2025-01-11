@@ -9,6 +9,7 @@ body {
 
 .navbar-brand {
     border: none;
+    border: 2px solid red;
     font-weight: bold;
     color: #007bff !important;
 }
