@@ -9,9 +9,8 @@ body {
 
 .navbar-brand {
     border: none;
-    border: 2px solid red;
     font-weight: bold;
-    color: #26ff00 !important;
+    color: #007bff !important;
 }
 
 .navbar-dark .navbar-nav .nav-link {
